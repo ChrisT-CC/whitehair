@@ -8,5 +8,5 @@ class ProverbForm(forms.ModelForm):
     """ create form here """
     class Meta:
         """ info about form """
-        model = Proverb
-        fields = ['content', 'meaning']
+        model = Proverb    
+        fields = ['content', 'meaning', 'author']
