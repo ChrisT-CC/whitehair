@@ -20,4 +20,5 @@ from proverb import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('add-proverb/', views.add_proverb, name='add_proverb')
 ]
