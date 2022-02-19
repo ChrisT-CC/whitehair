@@ -1,1 +1,10 @@
-<h2>Add proverb here</h2>
+<h2>Add your proverb here</h2>
+<div>
+    <form action="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+    <p>
+        <button type="submit">Add Proverb</button>
+    </p>
+</div>

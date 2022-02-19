@@ -2,6 +2,7 @@
 import random
 from django.shortcuts import render
 from .models import Proverb
+from .forms import ProverbForm
 
 
 def home(request):
@@ -21,5 +22,6 @@ def home(request):
 
 def add_proverb(request):
     """ add proverb view """
-    context = {}
+    form = ProverbForm()
+    context = {'form': form}
     return render(request, 'add-proverb.html', context)
