@@ -1,4 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,19 +8,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="white hair, proverbs, sayings, old, wise, wisdom, knowledge">
 
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <title>WhiteHair</title>
 </head>
 <body>
     
     {% include 'navbar.html' %}
 
+    <main class="container center-align">
+        {% block content %}
 
-    {% block content %}
-
-    {% endblock %}
-
+        {% endblock %}
+    </main>
 
     {% include 'footer.html' %}
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>
