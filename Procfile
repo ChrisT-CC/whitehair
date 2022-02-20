@@ -1,1 +1,1 @@
-web: gunicorn proverb.wsgi
+web: gunicorn whitehair.wsgi
