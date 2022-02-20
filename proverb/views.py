@@ -1,6 +1,6 @@
 """ proverb app views """
 import random
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Proverb
 from .forms import ProverbForm
 
@@ -36,3 +36,20 @@ def add_proverb(request):
     form = ProverbForm()
     context = {'form': form}
     return render(request, 'add-proverb.html', context)
+
+
+# def edit_proverb(request, proverb_id):
+#     """ edit proverb view """
+#     print(f'edit_id={proverb_id}')
+#     proverb = get_object_or_404(Proverb, id=proverb_id)
+#     # add POST functionality
+#     if request.method == 'POST':
+#         form = ProverbForm(request.POST, instance=proverb)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('home')
+
+#     # GET functionality
+#     form = ProverbForm(instance=proverb)
+#     context = {'form': form}
+#     return render(request, 'edit-proverb.html', context)

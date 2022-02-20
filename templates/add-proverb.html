@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
+{% load materializecss %}
+
 {% block content %}
     <h2>Add your proverb here</h2>
     <div>
         <form method="POST" action="">
             {% csrf_token %}
-            {{ form.as_p }}
-            <p>
-                <button type="submit">Add Proverb</button>
-            </p>
+            {{ form|materializecss}}
+            <br>
+            <button type="submit" class="btn-large">Add Proverb</button>
         </form>
     </div>
 {% endblock %}
