@@ -26,7 +26,7 @@ def home(request):
 def list_proverbs(request):
     """ generates a list with all proverbs """
     all_proverbs = Proverb.objects.all()
-    print(f'all proverbs: {all_proverbs}')
+    print(f'all proverbs: {all_proverbs}')                  # testing
     context = {'all_proverbs': all_proverbs}
     return render(request, 'proverbs.html', context)
 
@@ -46,18 +46,18 @@ def add_proverb(request):
     return render(request, 'add-proverb.html', context)
 
 
-# def edit_proverb(request, proverb_id):
-#     """ edit proverb view """
-#     print(f'edit_id={proverb_id}')
-#     proverb = get_object_or_404(Proverb, id=proverb_id)
-#     # add POST functionality
-#     if request.method == 'POST':
-#         form = ProverbForm(request.POST, instance=proverb)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('home')
+def edit_proverb(request, pk):
+    """ edit proverb view """
+    print(f'edit_id={pk}')                                  # testing
+    proverb = get_object_or_404(Proverb, id=pk)
+    # add POST functionality
+    if request.method == 'POST':
+        form = ProverbForm(request.POST, instance=proverb)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
 
-#     # GET functionality
-#     form = ProverbForm(instance=proverb)
-#     context = {'form': form}
-#     return render(request, 'edit-proverb.html', context)
+    # GET functionality
+    form = ProverbForm(instance=proverb)
+    context = {'form': form}
+    return render(request, 'edit-proverb.html', context)
