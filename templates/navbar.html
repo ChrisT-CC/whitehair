@@ -8,7 +8,7 @@
         </a>
         <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="#">Proverbs</a></li>
+            <li><a href="{% url 'list_proverbs' %}">Proverbs</a></li>
             <li><a href="#">Favorites</a></li>
             <li><a href="{% url 'add_proverb' %}">Add Proverbs</a></li>
             <li><a href="#">Login</a></li>
@@ -18,7 +18,7 @@
 
 <ul class="sidenav" id="mobile-demo">
     <li><a href="{% url 'home' %}">Home</a></li>
-    <li><a href="badges.html">Proverbs</a></li>
+    <li><a href="{% url 'list_proverbs' %}">Proverbs</a></li>
     <li><a href="collapsible.html">Favorites</a></li>
     <li><a href="{% url 'add_proverb' %}">Add Proverbs</a></li>
     <li><a href="mobile.html">Login</a></li>

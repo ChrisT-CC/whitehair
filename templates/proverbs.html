@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3>Proverbs</h3>
+
+    <div>
+        {% for proverb in all_proverbs %}
+            <div class="row">
+                <div class="col s12">
+                    {{ proverb.meaning }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

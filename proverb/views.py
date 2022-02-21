@@ -23,6 +23,14 @@ def home(request):
     return render(request, 'home.html', context)
 
 
+def list_proverbs(request):
+    """ generates a list with all proverbs """
+    all_proverbs = Proverb.objects.all()
+    print(f'all proverbs: {all_proverbs}')
+    context = {'all_proverbs': all_proverbs}
+    return render(request, 'proverbs.html', context)
+
+
 def add_proverb(request):
     """ add proverb view """
     # add POST functionality
