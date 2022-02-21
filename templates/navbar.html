@@ -11,7 +11,11 @@
             <li><a href="{% url 'list_proverbs' %}">Proverbs</a></li>
             <li><a href="#">Favorites</a></li>
             <li><a href="{% url 'add_proverb' %}">Add Proverbs</a></li>
-            <li><a href="#">Login</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'account_logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'account_login' %}">Login</a></li>
+            {% endif %}
         </ul>
     </div>
 </nav>
@@ -21,5 +25,9 @@
     <li><a href="{% url 'list_proverbs' %}">Proverbs</a></li>
     <li><a href="collapsible.html">Favorites</a></li>
     <li><a href="{% url 'add_proverb' %}">Add Proverbs</a></li>
-    <li><a href="mobile.html">Login</a></li>
+    {% if user.is_authenticated %}
+        <li><a href="{% url 'account_logout' %}">Logout</a></li>
+    {% else %}
+        <li><a href="{% url 'account_login' %}">Login</a></li>
+    {% endif %}
 </ul>
