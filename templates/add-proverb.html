@@ -3,13 +3,13 @@
 {% load materializecss %}
 
 {% block content %}
-    <h3>Add your proverb here</h3>
-    <div>
-        <form method="POST" action="">
-            {% csrf_token %}
-            {{ form|materializecss}}
-            <br>
-            <button type="submit" class="btn-large">Add Proverb</button>
-        </form>
+    <div class="section">
+        <h3>Add your proverb here</h3>
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form|materializecss}}
+                <br>
+                <button type="submit" class="btn waves-effect waves-light blue lighten-1">Add Proverb</button>
+            </form>
     </div>
 {% endblock %}
