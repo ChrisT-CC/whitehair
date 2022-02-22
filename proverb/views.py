@@ -1,5 +1,6 @@
 """ proverb app views """
 import random
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Proverb
 from .forms import ProverbForm
@@ -31,12 +32,14 @@ def list_proverbs(request):
     return render(request, 'proverbs.html', context)
 
 
+@login_required
 def add_proverb(request):
     """ add proverb view """
     # add POST functionality
     if request.method == 'POST':
         form = ProverbForm(request.POST)
         if form.is_valid():
+            form.instance.author = request.user
             form.save()
             return redirect('home')
 
@@ -46,6 +49,7 @@ def add_proverb(request):
     return render(request, 'add-proverb.html', context)
 
 
+@login_required
 def edit_proverb(request, pk):
     """ edit proverb view """
     print(f'edit_id={pk}')                                  # testing
@@ -63,8 +67,10 @@ def edit_proverb(request, pk):
     return render(request, 'edit-proverb.html', context)
 
 
+@login_required
 def delete_proverb(request, proverb_id):
     """ delete proverb view """
     proverb = get_object_or_404(Proverb, id=proverb_id)
-    proverb.delete()
+    if request.user == proverb.author:
+        proverb.delete()
     return redirect('home')
