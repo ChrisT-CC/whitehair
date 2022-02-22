@@ -3,23 +3,34 @@
 {% block content %}
 
     <div class="home-content">
+        <!-- id here {{ id }}       for testing -->
         {% if user.is_authenticated %}
             <ul class="collapsible popout center-align">
                 <li>
                     <div class="collapsible-header">
-                        {{ content }}
-                        <i class="fa-regular fa-heart"></i>
+                        <div class="row">
+                            <div class="col s12">
+                                <h4>{{ content }}</h4>
+                                <a href="#">
+                                    <i class="fa-regular fa-heart"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="collapsible-body"><span>{{ meaning }}</span></div>
+                    <div class="collapsible-body"><h5>{{ meaning }}</h5></div>
                 </li>
             </ul>
         {% else %}
         <ul class="collapsible popout center-align">
             <li>
                 <div class="collapsible-header">
-                    {{ content }}
+                    <div class="row">
+                        <div class="col s12">
+                            <h4>{{ content }}</h4>
+                        </div>
+                    </div>
                 </div>
-                <div class="collapsible-body"><span>{{ meaning }}</span></div>
+                <div class="collapsible-body"><h5>{{ meaning }}</h5></div>
             </li>
         </ul>
         {% endif %}

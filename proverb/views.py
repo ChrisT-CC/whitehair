@@ -11,12 +11,17 @@ def home(request):
     home view
     generates a random proverb and meaning
     """
-    max_records = Proverb.objects.all().count()
-    random_id = random.randint(1, max_records)
+    max_records = Proverb.objects.all()
+    print(f'max_records: {max_records}')                    # testing
+    records_ids = [max_record.id for max_record in max_records]
+    print(f'records_ids: {records_ids}')                    # testing
+    random_id = random.choice(records_ids)
+    print(f'random_id: {random_id}')                        # testing
     random_proverb_obj = Proverb.objects.get(id=random_id)
-    print(f'id = {random_id}')                              # testing
     print(f'random_proverb_obj = {random_proverb_obj}')     # testing
+
     context = {
+        'id': random_proverb_obj.id,
         'content': random_proverb_obj.content,
         'meaning': random_proverb_obj.meaning,
     }
