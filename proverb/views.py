@@ -61,3 +61,10 @@ def edit_proverb(request, pk):
     form = ProverbForm(instance=proverb)
     context = {'form': form}
     return render(request, 'edit-proverb.html', context)
+
+
+def delete_proverb(request, proverb_id):
+    """ delete proverb view """
+    proverb = get_object_or_404(Proverb, id=proverb_id)
+    proverb.delete()
+    return redirect('home')
