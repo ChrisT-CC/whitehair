@@ -5,35 +5,35 @@
     <h3>Proverbs</h3>
 
     <div>
+        <ul class="collapsible popout">
         {% for proverb in all_proverbs %}
-        {% if user.is_authenticated %}
-            <div class="row">
-                <div class="col s12">
+            {% if user.is_authenticated %}
+            <li>
+                <div class="collapsible-header">
                     <h5>
                         {{ proverb.content }}
                         {% if proverb.author == request.user %}
-                        <a href="#">
-                            <i class="fa-regular fa-heart"></i>
-                        </a>
-                        <a href="{% url 'edit_proverb' pk=proverb.id %}">
-                            <i class="fa-solid fa-pencil fa-sm"></i>
-                        </a> 
-                        <a href="{% url 'delete_proverb' proverb.id %}">
-                            <i class="fa-solid fa-trash-can fa-sm"></i>
-                        </a> 
+                            <a href="#">
+                                <i class="fa-regular fa-heart"></i>
+                            </a>
+                            <a href="{% url 'edit_proverb' pk=proverb.id %}">
+                                <i class="fa-solid fa-pencil fa-sm"></i>
+                            </a> 
+                            <a href="{% url 'delete_proverb' proverb.id %}">
+                                <i class="fa-solid fa-trash-can fa-sm"></i>
+                            </a> 
                         {% endif %}
                     </h5>
                 </div>
-            </div>
+                <div class="collapsible-body left-align"><h5>{{ proverb.meaning }}</h5></div>
+            </li>
             {% else %}
-            <div class="row">
-                <div class="col s12">
-                    <h5>
-                        {{ proverb.content }}
-                    </h5>
-                </div>
-            </div>
+            <li>
+                <div class="collapsible-header"><h5>{{ proverb.content }}</h5></div>
+                <div class="collapsible-body left-align"><h5>{{ proverb.meaning }}</h5></div>
+            </li>
             {% endif %}
         {% endfor %}
+        </ul>
     </div>
 {% endblock %}
