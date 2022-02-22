@@ -1,17 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     <div class="home-content">
-        <div class="row">
-            <div class="col s12">
-                <h2>{{ content }}</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <h2>{{ meaning }}</h2>
-            </div>
-        </div>
-    </div>
-   
+        {% if user.is_authenticated %}
+            <ul class="collapsible popout center-align">
+                <li>
+                    <div class="collapsible-header">
+                        {{ content }}
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="collapsible-body"><span>{{ meaning }}</span></div>
+                </li>
+            </ul>
+        {% else %}
+        <ul class="collapsible popout center-align">
+            <li>
+                <div class="collapsible-header">
+                    {{ content }}
+                </div>
+                <div class="collapsible-body"><span>{{ meaning }}</span></div>
+            </li>
+        </ul>
+        {% endif %}
+  
 {% endblock %}
