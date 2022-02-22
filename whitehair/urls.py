@@ -28,3 +28,6 @@ urlpatterns = [
 # The above code and the last two imports were added by Sean
 # from Code Institute Tutor assistance
 # Thanks Sean
+
+HANDLER404 = "views.error_404"
+HANDLER500 = "views.error_500"

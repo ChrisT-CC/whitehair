@@ -79,3 +79,13 @@ def delete_proverb(request, proverb_id):
     if request.user == proverb.author:
         proverb.delete()
     return redirect('home')
+
+
+def error_404(request):
+    """ handles 404 error """
+    return render(request, '404.html')
+
+
+def error_500(request):
+    """ handles 500 error """
+    return render(request, '500.html')
