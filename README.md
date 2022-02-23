@@ -161,7 +161,7 @@ The pencil button leads to a prepopulated edit form.
 
 The bin button deletes the proverb and leads the user to the main page.
 
-## **Important** Defensive programing
+#### **Important** Defensive programing
 
 On deletion there is no feedback or warning. A modal was considered to remind the user that this is a permanent delete from the database, but at the time of submission this functionality was not added yet.
 
@@ -242,7 +242,23 @@ The heart icon was left intentionally. A link to comming soon page can be implem
 
 ## Technologies Used
 
-- 
+- [Django](https://www.djangoproject.com/) framework used to build the project
+- [Python](https://www.python.org/) used to write all the code
+- [javascript](https://www.javascript.com/) used to initiate materialize components
+- [CSS](https://en.wikipedia.org/wiki/CSS) used for custom styling
+- [HTML](https://en.wikipedia.org/wiki/HTML) used for creating templates
+- [Materialize](https://materializecss.com/) used to style the project
+- [Font Awesome](https://fontawesome.com/) used for icons
+- [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools) used for manual testing and responsiveness
+- [GitHub](https://github.com/) used to host repo
+- [Git](https://git-scm.com/) used for version control
+- [Gitpod](https://www.gitpod.io/) used as IDE
+- [Heroku](https://dashboard.heroku.com/apps) used for deployment
+- [Draw.io](https://app.diagrams.net/) used to create ERD
+- [Cloudinary](https://cloudinary.com/) used to store static files
+- [Icon8](https://icons8.com/) used for favicon
+- [AmIResponsive](http://ami.responsivedesign.is/) used for responsive image mockup
+- [PostgreSQL](https://www.postgresql.org/) as database
 
 [Back to top](#Table-of-contents)
 
@@ -256,11 +272,34 @@ The heart icon was left intentionally. A link to comming soon page can be implem
 
 ## Deployment
 
+The project's repo was hosted on GitHub and it was deployed on Heroku, because GitHub Pages can only handle front-end files.
+
+- Create a Heroku app
+- Attach the PostgreSQL database
+- Prepare environment and settings.py
+- Set up Cloudinary for static files
+- Connect Heroku To GitHub
+- Set up automatic deployment
+
 [Back to top](#Table-of-contents)
 
 ---
 
 ## Credits
+
+### Content
+
+Code Institute's [Gitpod full template](https://github.com/Code-Institute-Org/gitpod-full-template) was used to to create this project.
+
+Code Institute's walkthrough projects "Hello Django", I "Think therefore I blog" and the Flask walkthrough app.
+
+### Acknowledgements
+
+Thanks to my mentor for help, suggetions and time
+
+Thanks to Ger and Sean from CI Tutor assistance for help with static files not loading
+
+Thanks to my family, friends and peers for suggestions, reviews and feedback.
 
 [Back to top](#Table-of-contents)
 
