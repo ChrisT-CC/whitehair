@@ -249,7 +249,7 @@ The heart icon was left intentionally. A link to comming soon page can be implem
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for creating templates
 - [Materialize](https://materializecss.com/) used to style the project
 - [Font Awesome](https://fontawesome.com/) used for icons
-- [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools) used for manual testing and responsiveness
+- [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools) used for manual testing and responsiveness
 - [GitHub](https://github.com/) used to host repo
 - [Git](https://git-scm.com/) used for version control
 - [Gitpod](https://www.gitpod.io/) used as IDE
@@ -265,6 +265,10 @@ The heart icon was left intentionally. A link to comming soon page can be implem
 ---
 
 ## Testing
+
+Testing was done manually. Chrome Dev Tools was used extensively first to see how everything looks (positioning and styling) and for responsivness. 
+
+Whenever there were errors in code 
 
 [Back to top](#Table-of-contents)
 
