@@ -249,7 +249,7 @@ The heart icon was left intentionally. A link to comming soon page can be implem
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for creating templates
 - [Materialize](https://materializecss.com/) used to style the project
 - [Font Awesome](https://fontawesome.com/) used for icons
-- [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools) used for manual testing and responsiveness
+- [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools) used for manual testing and responsiveness
 - [GitHub](https://github.com/) used to host repo
 - [Git](https://git-scm.com/) used for version control
 - [Gitpod](https://www.gitpod.io/) used as IDE
@@ -265,6 +265,40 @@ The heart icon was left intentionally. A link to comming soon page can be implem
 ---
 
 ## Testing
+
+Testing was done manually. Chrome Dev Tools was used extensively first to see how everything looks (positioning and styling) and for responsivness.
+
+Whenever there were errors in code I would Chrome Dev Tools was used for debugging.
+
+### Found bugs
+
+- #### A 500 error
+
+![Random id error](static/images/500-random-id-error.png)
+
+On the home page a random id was used to generate a random proverb on each refresh. The initial logic used random method on an integer set from 1 to max number of records. This worked up until proverbs were modified or deleted.
+
+![Random id original code](static/images/random-id-original-code.png)
+
+The logic was changed by generating a list of real ids and randomize that
+
+![Random id new code](static/images/random-id-new-code.png)
+
+- #### Static files not loading in local workspace
+
+This was fixed with the help of Tutor Assistance. Thanks Ger and Sean
+
+- #### Materialize forms
+
+There was an issue with Materialize forms not loading properly. Upon Google research Django-materializecss-form was installed and used to fix this problem.
+
+- #### ModelForm Issue
+
+There was an issue with rendering the ModelForm in a sense that the primary key author could not be removed from the model form. This allowed the user to select a different user as author. Upon Django doc research the author field was set as uneditable and the author was set from logic as the current user
+
+- #### Other issues
+
+Django fought back every step of the way so extensive Django doc and Google research was necessary. This delayed the project unexpectedly.
 
 [Back to top](#Table-of-contents)
 
