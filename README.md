@@ -266,6 +266,7 @@ The heart icon was left intentionally. A link to comming soon page can be implem
 
 ## Testing
 
+
 Testing was done manually. Chrome Dev Tools was used extensively first to see how everything looks (positioning and styling) and for responsivness.
 
 Whenever there were errors in code I would Chrome Dev Tools was used for debugging.
